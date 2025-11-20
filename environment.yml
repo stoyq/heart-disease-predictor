@@ -2,6 +2,7 @@ name: hydrant-env
 channels:
   - conda-forge
 dependencies:
+  - conda-lock
   - python=3.11
   - pandas
   - numpy
