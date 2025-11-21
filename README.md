@@ -10,7 +10,7 @@ In this project, we use the UCI Heart Disease dataset to build a machine-learnin
 
 ## About the Dataset
 
-The data set that was used in this project can be found [here](https://archive.ics.uci.edu/dataset/45/heart+disease). It contains 303 observations, 14 features and a target value used to indicate the diagnosis of heart disease.
+The dataset that was used in this project can be found [here](https://archive.ics.uci.edu/dataset/45/heart+disease). It contains 303 observations, 14 features and a target value used to indicate the diagnosis of heart disease.
 
 
 ## Report
