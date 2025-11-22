@@ -45,7 +45,7 @@ Follow the instructions below to reproduce the analysis.
     git clone git@github.com:stoyq/heart-disease-predictor.git
     ```
 
-2. Setup the conda environment by running
+2. Navigate to the `heart-disease-predictor` folder and setup the conda environment by running
 
     ```
     conda env create --file environment.yml
