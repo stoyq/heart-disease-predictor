@@ -71,8 +71,6 @@ Follow the instructions below to reproduce the analysis.
 
 1. Navigate to the `analysis` folder, and open `heart_disease_predictor.ipynb` in Jupyter Lab. Then run the notebook from top to bottom by using the top menu: Run -> Run All Cells.
 
-      ##### A note about downloading the dataset: Our analysis script is currently set up to fetch the data directly using `ucimlrepo`. We have included a separate notebook `download_data.ipynb` that shows how you can download the raw data into the `data/raw` folder, and then process it into the `data/processed` folder. The raw and processed data in these folders are currently not being read in by our analysis script, but are just included for reference.
-
 2. To reproduce the PDF, in Jupyter Lab: File -> Save and Export Notebook As -> PDF. Note: Additional libraries related to LaTeX may be required. If you run into a problem reproducing the PDF, you can also output a HTML file. If there are further issues, feel free to reach out to the authors of this project via their GitHub accounts.
 
 ## License
