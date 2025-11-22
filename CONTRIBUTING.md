@@ -1,6 +1,6 @@
-# Contributing to Hydrants Installation Trend project
+# Contributing to Heart Disease Predictor project
 
-This outlines how to propose a change to Hydrants Installation Trend project.
+This outlines how to propose a change to Heart Disease Predictor project.
 
 ### Fixing typos
 
