@@ -12,7 +12,6 @@ In this project, we use the UCI Heart Disease dataset to build a machine-learnin
 
 The dataset that was used in this project can be found [here](https://archive.ics.uci.edu/dataset/45/heart+disease). It contains 303 observations, 14 features and a target value used to indicate the diagnosis of heart disease.
 
-
 ## Report
 
 The final report can be found [here](doc/heart_disease_predictor.pdf).
@@ -21,17 +20,75 @@ The final report can be found [here](doc/heart_disease_predictor.pdf).
 
 This project uses the following libraries and modules. We recommend using conda to reproduce the same environment. See Usage section below for installation notes.
 
-  - python>=3.11
-  - pandas
-  - numpy
-  - matplotlib
-  - seaborn
-  - scikit-learn
-  - requests
-  - jupyterlab
-  - ucimlrepo
-  - conda-lock
-  - pip
+- python>=3.11
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- requests
+- jupyterlab
+- ucimlrepo
+- conda-lock
+- pip
+
+## Running the Project with Docker
+
+To ensure a fully reproducible computational environment, our project provides a Docker-based setup. This allows all team members to run the analysis using identical Python and library versions, independent of their local machines.
+
+## 1. Run the project using Docker Compose
+
+After cloning the repository, launch the environment with:
+
+    ```
+    docker compose up
+    ```
+This will:
+
+- Start a Jupyter Lab server inside the container
+- Mount the project directory into the container
+- Use the team’s published Docker image
+- Avoid the need to install dependencies locally
+
+Once the container starts, open the following address in your browser:
+
+<http://localhost:8888>
+
+## 2. Stop the container
+
+- Press:
+
+```
+Ctrl + C
+```
+
+- Then remove the running container:
+
+```
+docker compose down
+```
+
+## 3. About the Docker image
+
+Our Docker image is automatically built and published through GitHub Actions to:
+
+```
+<docker_username>/heart-disease-predictor:latest
+```
+
+Any changes to the Dockerfile, environment.yml, or dependencies trigger an automated rebuild and publish to DockerHub.
+This ensures all team members always use the latest reproducible environment.
+
+## 4. Why Docker is recommended
+
+Using Docker ensures:
+
+- Full reproducibility
+- Identical environments for all team members
+- No dependency conflicts
+- Cross-platform support (macOS, Windows, Linux)
+- Cleaner workflow compared to local conda environments
+- The conda instructions below remain available but are optional
 
 ## Usage
 
