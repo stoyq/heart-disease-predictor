@@ -1,0 +1,14 @@
+services:
+  dockerlock:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: josedmyt/heart-disease-predictor:latest
+    container_name: heart-disease-predictor
+    ports:
+      - "8899:8888"
+    volumes:
+      - ./:/workspace
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
