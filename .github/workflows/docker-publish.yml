@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   push: 
     paths: 
-      - 'DockerFile'
+      - 'Dockerfile'
       - 'conda-lock.yml'
       
 jobs:
