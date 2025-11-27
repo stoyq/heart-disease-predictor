@@ -13,3 +13,7 @@ dependencies:
   - ucimlrepo
   - conda-lock
   - pip
+  - pip:
+      - ucimlrepo
+      - deepchecks
+      - pointblank
