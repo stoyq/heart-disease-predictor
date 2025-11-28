@@ -4,7 +4,7 @@ channels:
 dependencies:
   - python>=3.11
   - pandas
-  - numpy
+  - numpy=1.26.4 
   - matplotlib
   - seaborn
   - scikit-learn
@@ -12,6 +12,7 @@ dependencies:
   - jupyterlab
   - ucimlrepo
   - conda-lock
+  - pandera
   - pip
   - pip:
       - ucimlrepo
