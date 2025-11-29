@@ -77,7 +77,7 @@ From here, you can either set up the environment locally on your computer (Metho
 3. Run the analysis (next section). When finished, go back to the terminal to stop the running container by:
 
     ```
-    docker compose stop
+    make stop
     ```
 
 ## Running the analysis
