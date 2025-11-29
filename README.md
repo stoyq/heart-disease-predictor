@@ -59,7 +59,7 @@ From here, you can either set up the environment locally on your computer (Metho
 
 #### Method B: Use the Docker container
 
-1. After cloning the repository, launch the environment with:
+1. First ensure that Docker Desktop application is running, then from the terminal run:
 
     ```
     make up
