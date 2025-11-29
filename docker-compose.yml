@@ -1,8 +1,8 @@
 services:
   dockerlock:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile
     image: josedmyt/heart-disease-predictor:latest
     container_name: heart-disease-predictor
     ports:
