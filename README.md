@@ -16,9 +16,9 @@ The dataset that was used in this project can be found [here](https://archive.ic
 
 The final report can be found [here](doc/heart_disease_predictor.pdf).
 
-## Dependencies
+## Project Environment and Dependencies
 
-This project makes use of a host of external packages, and their specific version numbers can be found in the [environment.yml](environment.yml) file. We recommend using conda to reproduce the same environment for your platform, or using the Docker container that we provide.
+This project makes use of a host of external packages, and their specific version numbers can be found in the [environment.yml](environment.yml) file. We recommend using conda to reproduce the same environment for your particular platform, or using the Docker container that we provide.
 
 ## Setup
 
@@ -55,7 +55,7 @@ From here, you can either set up the environment locally on your computer (Metho
     jupyter-lab
     ```
 
-5. If Jupyter Lab asks to select a kernel, choose `group25-env`
+4. If Jupyter Lab asks to select a kernel, choose `group25-env`
 
 #### Method B: Use the Docker container
 
@@ -74,13 +74,7 @@ From here, you can either set up the environment locally on your computer (Metho
 
     <http://localhost:8899>
 
-3. Run the analysis (next section). When finished, go back to the terminal and press:
-
-    ```
-    Ctrl + C
-    ```
-
-    Then stop the running container:
+3. Run the analysis (next section). When finished, go back to the terminal to stop the running container by:
 
     ```
     docker compose stop
