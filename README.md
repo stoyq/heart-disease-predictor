@@ -18,7 +18,7 @@ The final report can be found [here](doc/heart_disease_predictor.pdf).
 
 ## Dependencies
 
-This project makes use of a host of external packages, and their specific version numbers can be found in the [environment.yml](environment.yml) file. We recommend using conda to reproduce the same environment for your platform. See Usage section below for installation notes.
+This project makes use of a host of external packages, and their specific version numbers can be found in the [environment.yml](environment.yml) file. We recommend using conda to reproduce the same environment for your platform, or using the Docker container that we provide.
 
 ## Setup
 
@@ -86,13 +86,13 @@ From here, you can either set up the environment locally on your computer (Metho
     docker compose stop
     ```
 
-#### Running the analysis
+## Running the analysis
 
 1. Navigate to the `analysis` folder, and open `heart_disease_predictor.ipynb` in Jupyter Lab. Then run the notebook from top to bottom by using the top menu: Run -> Run All Cells.
 
 2. To reproduce the PDF, in Jupyter Lab: File -> Save and Export Notebook As -> PDF. Note: Additional libraries related to LaTeX may be required. If you run into a problem reproducing the PDF, you can also output a HTML file. If there are further issues, feel free to reach out to the authors of this project via their GitHub accounts.
 
-#### How to contribute and update the Docker image
+## How to contribute and update the Docker image
 
 Using Docker ensures:
 
@@ -101,18 +101,14 @@ Using Docker ensures:
 - No dependency conflicts
 - Cross-platform support (macOS, Windows, Linux)
 - Cleaner workflow compared to local conda environments
-- The conda instructions below remain available but are optional
 
 Our Docker image is automatically built and published through GitHub Actions to:
 
-```
-josedmy/heart-disease-predictor:latest
-```
+<https://hub.docker.com/r/josedmyt/heart-disease-predictor/tags>
 
-Any changes to the Dockerfile or conda-lock.yml trigger an automated rebuild and publish to DockerHub.
-This ensures all team members always use the latest reproducible environment.
+Any changes to the `Dockerfile` or `conda-lock.yml` trigger an automated rebuild and publish to DockerHub. This ensures all team members always use the latest reproducible environment.
 
-Libraries are frequently tested to ensure compatibility across all platforms. If you add a new package to the project, first add it to environment.yml with the correct version. Then recreate the conda-lock.yml file by
+Libraries are frequently tested to ensure compatibility across all platforms. If you add a new package to the project, first add it to `environment.yml` with the correct cross-platform compatible version number. Then recreate the `conda-lock.yml` file by running:
 
 ```
 make cl
