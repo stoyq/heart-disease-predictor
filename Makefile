@@ -7,3 +7,9 @@ up: ## stop and start docker-compose services
 .PHONY: stop
 stop: ## stop docker-compose services
 	docker compose stop
+
+
+env:
+	conda env remove -n group25-env -y || true
+	conda env create --file environment.yml
+	
