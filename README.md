@@ -18,68 +18,81 @@ The final report can be found [here](doc/heart_disease_predictor.pdf).
 
 ## Dependencies
 
-This project uses the following libraries and modules. We recommend using conda to reproduce the same environment. See Usage section below for installation notes.
+This project makes use of a host of external packages, and their specific version numbers can be found in the [environment.yml](environment.yml) file. We recommend using conda to reproduce the same environment for your platform. See Usage section below for installation notes.
 
-- python>=3.11
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- scikit-learn
-- requests
-- jupyterlab
-- ucimlrepo
-- conda-lock
-- pip
+## Setup
 
-## Running the Project with Docker
+Follow the instructions below to reproduce the analysis.
 
-To ensure a fully reproducible computational environment, our project provides a Docker-based setup. This allows all team members to run the analysis using identical Python and library versions, independent of their local machines.
+Begin by cloning this GitHub repository.
 
-## 1. Run the project using Docker Compose
+```
+git clone git@github.com:stoyq/heart-disease-predictor.git
+```
 
-After cloning the repository, launch the environment with:
+Navigate to the `heart-disease-predictor` folder.
+
+From here, you can either set up the environment locally on your computer (Method A), or use the Docker container that we provide (Method B).
+
+
+#### Method A: Set up local installation
+
+1. Create the environment from Makefile
 
     ```
-    docker compose up
+    make env
     ```
-This will:
 
-- Start a Jupyter Lab server inside the container
-- Mount the project directory into the container
-- Use the team’s published Docker image
-- Avoid the need to install dependencies locally
+2. Once the environment has been created, activate the environment
 
-Once the container starts, open the following address in your browser:
+    ```
+    conda activate group25-env
+    ```
 
-<http://localhost:8888>
+3. Run Jupyter Lab
 
-## 2. Stop the container
+    ```
+    jupyter-lab
+    ```
 
-- Press:
+5. If Jupyter Lab asks to select a kernel, choose `group25-env`
 
-```
-Ctrl + C
-```
+#### Method B: Use the Docker container
 
-- Then remove the running container:
+1. After cloning the repository, launch the environment with:
 
-```
-docker compose down
-```
+    ```
+    make up
+    ```
+    This will:
 
-## 3. About the Docker image
+    - Try to pull the latest image from the team's DockerHub
+    - Start a Jupyter Lab server inside the container
+    - Mount the project directory into the container
 
-Our Docker image is automatically built and published through GitHub Actions to:
+2. Once the container starts, open the following address in your browser:
 
-```
-<docker_username>/heart-disease-predictor:latest
-```
+    <http://localhost:8899>
 
-Any changes to the Dockerfile, environment.yml, or dependencies trigger an automated rebuild and publish to DockerHub.
-This ensures all team members always use the latest reproducible environment.
+3. Run the analysis (next section). When finished, go back to the terminal and press:
 
-## 4. Why Docker is recommended
+    ```
+    Ctrl + C
+    ```
+
+    Then stop the running container:
+
+    ```
+    docker compose stop
+    ```
+
+#### Running the analysis
+
+1. Navigate to the `analysis` folder, and open `heart_disease_predictor.ipynb` in Jupyter Lab. Then run the notebook from top to bottom by using the top menu: Run -> Run All Cells.
+
+2. To reproduce the PDF, in Jupyter Lab: File -> Save and Export Notebook As -> PDF. Note: Additional libraries related to LaTeX may be required. If you run into a problem reproducing the PDF, you can also output a HTML file. If there are further issues, feel free to reach out to the authors of this project via their GitHub accounts.
+
+#### How to contribute and update the Docker image
 
 Using Docker ensures:
 
@@ -90,45 +103,22 @@ Using Docker ensures:
 - Cleaner workflow compared to local conda environments
 - The conda instructions below remain available but are optional
 
-## Usage
+Our Docker image is automatically built and published through GitHub Actions to:
 
-Follow the instructions below to reproduce the analysis.
+```
+josedmy/heart-disease-predictor:latest
+```
 
-#### Setup
+Any changes to the Dockerfile or conda-lock.yml trigger an automated rebuild and publish to DockerHub.
+This ensures all team members always use the latest reproducible environment.
 
-1. Clone this GitHub repository.
+Libraries are frequently tested to ensure compatibility across all platforms. If you add a new package to the project, first add it to environment.yml with the correct version. Then recreate the conda-lock.yml file by
 
-    ```
-    git clone git@github.com:stoyq/heart-disease-predictor.git
-    ```
+```
+make cl
+```
 
-2. Navigate to the `heart-disease-predictor` folder and setup the conda environment by running
 
-    ```
-    conda env create --file environment.yml
-    ```
-
-    Alternatively, we have also provided a [conda-lock file](conda-lock.yml). Please refer to the [conda-lock documentation](https://github.com/conda/conda-lock) for basic usage.
-
-3. Once the environment has been created, activate the environment
-
-    ```
-    conda activate group25-env
-    ```
-
-4. Run Jupyter Lab
-
-    ```
-    jupyter-lab
-    ```
-
-5. If Jupyter Lab asks to select a kernel, choose `group25-env`
-
-#### Running the analysis
-
-1. Navigate to the `analysis` folder, and open `heart_disease_predictor.ipynb` in Jupyter Lab. Then run the notebook from top to bottom by using the top menu: Run -> Run All Cells.
-
-2. To reproduce the PDF, in Jupyter Lab: File -> Save and Export Notebook As -> PDF. Note: Additional libraries related to LaTeX may be required. If you run into a problem reproducing the PDF, you can also output a HTML file. If there are further issues, feel free to reach out to the authors of this project via their GitHub accounts.
 
 ## License
 

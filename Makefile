@@ -1,7 +1,10 @@
 .PHONY: up
 up: ## stop and start docker-compose services
-	# by default stop everything before re-creating
+	# stop existing containers
 	make stop
+	# try to pull from Docker Hub; if that fails, build locally
+	docker compose pull || docker build -t josedmyt/heart-disease-predictor:latest .
+	# then start services
 	docker compose up -d
 
 .PHONY: stop
@@ -9,7 +12,21 @@ stop: ## stop docker-compose services
 	docker compose stop
 
 
+.PHONY: cl
+cl: ## create conda lock for multiple platforms
+	# the linux-aarch64 is used for ARM Macs using linux docker container
+	conda-lock lock \
+		--file environment.yml \
+		-p linux-64 \
+		-p osx-64 \
+		-p osx-arm64 \
+		-p win-64 \
+		-p linux-aarch64
+
+.PHONY: env
 env:
 	conda env remove -n group25-env -y || true
-	conda env create --file environment.yml
+	conda-lock install -n group25-env conda-lock.yml
+## old conda create command
+#	conda env create --file environment.yml
 	
