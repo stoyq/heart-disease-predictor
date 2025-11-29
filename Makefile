@@ -26,7 +26,6 @@ cl: ## create conda lock for multiple platforms
 .PHONY: env
 env:
 	conda env remove -n group25-env -y || true
-	conda-lock install -n group25-env conda-lock.yml
-## old conda create command
-#	conda env create --file environment.yml
+#	conda-lock install -n group25-env conda-lock.yml
+	conda env create --file environment.yml
 	
