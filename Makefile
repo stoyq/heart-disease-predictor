@@ -29,3 +29,13 @@ env:
 #	conda-lock install -n group25-env conda-lock.yml
 	conda env create --file environment.yml
 	
+.PHONY: report
+report:
+	quarto render doc/heart_disease_predictor_quarto_report.qmd --to pdf
+	quarto render doc/heart_disease_predictor_quarto_report.qmd --to html
+
+.PHONY: clean
+clean:
+	rm -rf doc/heart_disease_predictor_quarto_report_files
+	rm -f doc/heart_disease_predictor_quarto_report.pdf
+	rm -f doc/heart_disease_predictor_quarto_report.html
