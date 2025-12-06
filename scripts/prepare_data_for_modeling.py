@@ -68,7 +68,32 @@ def main(input_dir, out_dir):
     if not check_feat_feat_corr_result.passed_conditions():
         raise ValueError("Feature-Feature correlation exceeds the maximum acceptable threshold.")
     
+    #Data Splitting 
+    X = cleveland_data.drop(columns=["target"])
+    y = cleveland_data["target"]
 
+    X_train, X_test, y_train, y_test = train_test_split(
+        X,
+        y,
+        test_size=0.20,   
+        random_state=522,   
+        stratify=y         
+    )
+    
+    # Merge target back before saving
+
+    train_df = X_train.copy()
+    train_df["target"] = y_train
+
+    test_df = X_test.copy()
+    test_df["target"] = y_test
+
+    # Export X_train.csv and X_test.csv
+    train_df.to_csv(os.path.join(out_dir, "X_train.csv"), index=False)
+    test_df.to_csv(os.path.join(out_dir, "X_test.csv"), index=False)
+
+    #Command to run script 
+    #python scripts/prepare_data_for_modeling.py --input_dir data/processed/cleveland_clean.csv --out_dir data/processed
 
 if __name__ == '__main__':
     main()
