@@ -7,6 +7,7 @@ format:
     html:
         toc: true
         toc-depth: 2
+        theme: cosmo
     pdf:
         toc: true
         toc-depth: 2
@@ -19,7 +20,7 @@ editor: source
 
 # Summary
 
-Heart disease is one of the leading causes of death globally, and early detection is critical for prevention and treatment. In this project, we use the UCI Heart Disease dataset to build a machine-learning model that predicts whether a patient is likely to have heart disease based on clinical and physiological attributes. We load the dataset directly from the web, clean and wrangle the data, perform exploratory data analysis (EDA), and train a classification model (Decision Tree) to identify important predictors of heart disease. Our results highlight key risk indicators that align with well-known medical knowledge, demonstrating how machine learning can support early screening and clinical decision-making.
+Heart disease is one of the leading causes of death globally, and early detection is critical for prevention and treatment (@detrano1989cad). In this project, we use the UCI Heart Disease (@uci_heart_disease) dataset to build a machine-learning model that predicts whether a patient is likely to have heart disease based on clinical and physiological attributes. We load the dataset directly from the web, clean and wrangle the data, perform exploratory data analysis (EDA), and train a classification model (Decision Tree) to identify important predictors of heart disease. Our results highlight key risk indicators that align with well-known medical knowledge, demonstrating how machine learning can support early screening and clinical decision-making.
 
 # Introduction
 
