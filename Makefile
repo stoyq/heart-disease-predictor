@@ -53,3 +53,8 @@ report:
 	rm -f doc/heart_disease_predictor_quarto_report.html
 	quarto render doc/heart_disease_predictor_quarto_report.qmd --to pdf
 	quarto render doc/heart_disease_predictor_quarto_report.qmd --to html
+
+
+.PHONY: clean
+clean:
+	rm -rf doc/heart_disease_predictor_quarto_report_files
