@@ -42,6 +42,9 @@ analysis:
 	# Step 2:
 
 	# Step 3:
+	python scripts/eda.py \
+		--processed-training-data data/processed/cleveland_clean.csv 
+		--plot-to ./img/
 
 	# Step 4:
 
