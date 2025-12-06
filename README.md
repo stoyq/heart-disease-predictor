@@ -82,9 +82,19 @@ From here, you can either set up the environment locally on your computer (Metho
 
 ## Running the analysis
 
-1. Navigate to the `analysis` folder, and open `heart_disease_predictor.ipynb` in Jupyter Lab. Then run the notebook from top to bottom by using the top menu: Run -> Run All Cells.
+1. You can run the analysis by:
 
-2. To reproduce the PDF, in Jupyter Lab: File -> Save and Export Notebook As -> PDF. Note: Additional libraries related to LaTeX may be required. If you run into a problem reproducing the PDF, you can also output a HTML file. If there are further issues, feel free to reach out to the authors of this project via their GitHub accounts.
+    ```
+    make analysis
+    ```
+    This will download the dataset, perform cleaning, preprocessing, analysis, and output relevant tables and figures.
+
+2. After running the analysis, you can reproduce the final project report by:
+
+    ```
+    make report
+    ```
+    This will use quarto to render out the .qmd file to both PDF and HTML format.
 
 ## How to contribute and update the Docker image
 
