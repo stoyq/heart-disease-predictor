@@ -31,17 +31,25 @@ env:
 
 .PHONY: analysis
 analysis:
+	#
 	# Step 1: Download the data
-
-	python scripts/01_data_download.py \
+	#
+	python scripts/data_download.py \
 		--dataset_url="https://archive.ics.uci.edu/static/public/45/heart+disease.zip" \
 		--dataset_filename="processed.cleveland.data" \
 		--download_dir="./data/raw" \
 		--output_dir="./data/processed"
 
-	# Step 2:
+	#
+	# Step 2: Prepare data for modelling
+	#
+	python -W ignore scripts/prepare_data_for_modeling.py \
+		--input_dir data/processed/cleveland_clean.csv \
+		--out_dir data/processed
 
-	# Step 3:
+	#
+	# Step 3: Run EDA
+	#
 	python scripts/eda.py \
 		--processed-training-data data/processed/cleveland_clean.csv \
 		--plot-to ./eda/img/
@@ -49,7 +57,12 @@ analysis:
     	--processed-training-data data/processed/cleveland_clean.csv \
 		--output-to ./eda/tables/
 
-	# Step 4:
+	#
+	# Step 4: Model and Analysis
+	#
+	python -W ignore scripts/model.py \
+		--input data/processed/cleveland_clean.csv \
+		--output results/analysis
 
 
 .PHONY: report
