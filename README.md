@@ -81,7 +81,14 @@ From here, you can either set up the environment locally on your computer (Metho
     ```
     This will download the dataset, perform cleaning, preprocessing, analysis, and output relevant tables and figures.
 
-2. After running the analysis, you can reproduce the final project report by:
+    Note: If you are running this inside the Docker container terminal (via Method B), and it says make command not found, then you can install make utility by:
+
+    ```
+    apt-get update
+    apt-get install -y make
+    ```
+
+3. After running the analysis, you can reproduce the final project report by:
 
     ```
     make report
