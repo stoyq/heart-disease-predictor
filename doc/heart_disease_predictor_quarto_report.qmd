@@ -20,7 +20,7 @@ editor: source
 
 # Summary
 
-Heart disease is one of the leading causes of death globally, and early detection is critical for prevention and treatment (@detrano1989cad). In this project, we use the UCI Heart Disease (@uci_heart_disease) dataset to build a machine-learning model that predicts whether a patient is likely to have heart disease based on clinical and physiological attributes. We load the dataset directly from the web, clean and wrangle the data, perform exploratory data analysis (EDA), and train a classification model (Decision Tree) to identify important predictors of heart disease. Our results highlight key risk indicators that align with well-known medical knowledge, demonstrating how machine learning can support early screening and clinical decision-making.
+Heart disease is one of the leading causes of death globally, and early detection is critical for prevention and treatment (@detrano1989cad). In this project, we use the UCI Heart Disease (@uci_heart_disease) dataset to build a machine-learning model that predicts whether a patient is likely to have heart disease based on clinical and physiological attributes. We load the dataset directly from the web, clean and wrangle the data, perform exploratory data analysis (EDA), and train a classification model (SVC) to identify important predictors of heart disease. Our results highlight key risk indicators that align with well-known medical knowledge, demonstrating how machine learning can support early screening and clinical decision-making.
 
 # Introduction
 
@@ -30,7 +30,7 @@ Our research question is:
 
 “Given a patient’s clinical and physiological attributes, can we accurately predict whether they have heart disease?”
 
-To answer this question, we use the publicly available Heart Disease dataset from the UCI Machine Learning Repository. This dataset contains multiple medically relevant variables, making it suitable for a classification model such as a Decision Tree.
+To answer this question, we use the publicly available Heart Disease dataset from the UCI Machine Learning Repository. This dataset contains multiple medically relevant variables, making it suitable for a classification model such as a SVC.
 
 # Dataset Description
 
@@ -84,10 +84,10 @@ Pairplots to explore relationships between key features
 Distribution of target classes
 Feature correlation matrix
 Build a classification model
-A Decision Tree Classifier is trained to predict heart disease.
+A SVC model is trained to predict heart disease.
 We split the dataset into training and testing subsets and evaluate model accuracy.
 Visualize the model results
-Plot of the trained Decision Tree
+Plot of the trained SVC model
 Feature importance bar chart
 
 # Importing the Dataset
@@ -135,15 +135,26 @@ The plots below are distribution of various features color coded by the target v
 
 ![Feature distribution grid plot](../eda/img/feature_distributions_grid.png){#fig-eda}
 
+
+
 # Modeling Section
 
 ## Column Transformations
 
+The analysis dataset was split into two sets, training and test sets. A 80/20 split was utilized, along with stratification on the target variable, to preserve class proportions across splits. Predictors were grouped into three categories: numerical features (age, trestbps, chol, thalach, oldpeak), categorical features (cp, restecg, slope, ca, thal), and binary  (sex, fbs, exang). A scikit-learn ColumnTransformer was used to apply StandardScaler to the  numerical columns, one-hot encoding to the categorical features,and passs through the binary featuressoo they remain unchanged. These transformations ensured that all features were on appropriate scales and in a numeric format suitable for our SVC model, while keeping all preprocessing steps encapsulated within the modeling pipeline to avoid data leakage.
+
 ## Create the Pipeline
+
+The column transformer and the Support Vector Classifier (SVC) were combined into a single pipeline. This way, we ensure that for each resampling split, the preprocessing steps are fit exclusively on the training portion of the dataset and subsequently applied to the validation portion. This design yields a more realistic assessment of model performance and prevents information from the test folds from influencing the training process.
 
 ## Crossvalidation
 
+On the training set, we applied a  5-fold cross-validation using the cross_validate function, with both training and validation scores reported for each fold. The results were aggregated to compute the mean and standard deviation across the cross-validation folds, which allows us to generate a summary of the model’s  performance and its variability.
+
+
 ## Fit the Model
+After cross-validation, the final SVC pipeline was fit on the full training set. The fitted pipeline was then used to generate predictions on the held-out test set, enabling an out-of-sample evaluation of classification performance.
+
 
 ```{python}
 import pandas as pd
@@ -158,7 +169,7 @@ df
 
 # Discussion
 
-The Decision Tree model was able to identify meaningful patterns to predict heart disease based on the data, with a test score of 0.61 and train score of 0.78. Based on these results, it might indicate that there was some overfitting based on the large difference between training and test results.
+The SVC model was able to identify meaningful patterns to predict heart disease based on the data, with a test score of 0.61 and train score of 0.78. Based on these results, it might indicate that there was some overfitting based on the large difference between training and test results.
 
 From the EDA (@fig-eda), we see that various features such as age, sex, chol and more have clear differences in their distribution between disease and no disease which will help the model to predict between the two. For a better predictor, we may want to incorporate additional features given the complexity of heart disease.
 
