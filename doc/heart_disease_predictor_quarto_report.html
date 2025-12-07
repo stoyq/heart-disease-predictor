@@ -45,7 +45,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="heart_disease_predictor_quarto_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="heart_disease_predictor_quarto_report_files/libs/clipboard/clipboard.min.js"></script>
 <script src="heart_disease_predictor_quarto_report_files/libs/quarto-html/quarto.js"></script>
 <script src="heart_disease_predictor_quarto_report_files/libs/quarto-html/popper.min.js"></script>
 <script src="heart_disease_predictor_quarto_report_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -55,6 +55,9 @@ div.csl-indent {
 <script src="heart_disease_predictor_quarto_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="heart_disease_predictor_quarto_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="heart_disease_predictor_quarto_report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -154,6 +157,151 @@ div.csl-indent {
 <li>num (Target: the predicted attribute (0 = no heart disease, 1 = heart disease))</li>
 </ul>
 <p>These variables include both continuous and categorical measurements commonly used in clinical diagnostics.</p>
+<p>The following table <a href="#tbl-info_stats" class="quarto-xref">Table&nbsp;1</a> shows the type of each measurement and the number of null and non-null counts in the dataset.</p>
+<div id="tbl-info_stats" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-info_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Data types of feature names
+</figcaption>
+<div aria-describedby="tbl-info_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="74918ecf" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">Column</th>
+<th data-quarto-table-cell-role="th">Type</th>
+<th data-quarto-table-cell-role="th">Non-Null Count</th>
+<th data-quarto-table-cell-role="th">Null Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>age</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>sex</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>cp</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>trestbps</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>chol</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>5</td>
+<td>fbs</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>6</td>
+<td>restecg</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>7</td>
+<td>thalach</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>8</td>
+<td>exang</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>9</td>
+<td>oldpeak</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>10</td>
+<td>slope</td>
+<td>float64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>11</td>
+<td>ca</td>
+<td>object</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>12</td>
+<td>thal</td>
+<td>object</td>
+<td>303</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>13</td>
+<td>target</td>
+<td>int64</td>
+<td>303</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
 </section>
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
@@ -173,6 +321,286 @@ div.csl-indent {
 </section>
 <section id="exploratory-data-analysis-eda" class="level1">
 <h1>Exploratory Data Analysis (EDA)</h1>
+<p>We start by calculating some statistics for all the features:</p>
+<div id="tbl-describe_stats" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-describe_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Statistics of features
+</figcaption>
+<div aria-describedby="tbl-describe_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="d65ad6be" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">cp</th>
+<th data-quarto-table-cell-role="th">trestbps</th>
+<th data-quarto-table-cell-role="th">chol</th>
+<th data-quarto-table-cell-role="th">fbs</th>
+<th data-quarto-table-cell-role="th">restecg</th>
+<th data-quarto-table-cell-role="th">thalach</th>
+<th data-quarto-table-cell-role="th">exang</th>
+<th data-quarto-table-cell-role="th">oldpeak</th>
+<th data-quarto-table-cell-role="th">slope</th>
+<th data-quarto-table-cell-role="th">target</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>count</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+<td>303.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>mean</td>
+<td>54.438944</td>
+<td>0.679868</td>
+<td>3.158416</td>
+<td>131.689769</td>
+<td>246.693069</td>
+<td>0.148515</td>
+<td>0.990099</td>
+<td>149.607261</td>
+<td>0.326733</td>
+<td>1.039604</td>
+<td>1.600660</td>
+<td>0.937294</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>std</td>
+<td>9.038662</td>
+<td>0.467299</td>
+<td>0.960126</td>
+<td>17.599748</td>
+<td>51.776918</td>
+<td>0.356198</td>
+<td>0.994971</td>
+<td>22.875003</td>
+<td>0.469794</td>
+<td>1.161075</td>
+<td>0.616226</td>
+<td>1.228536</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>min</td>
+<td>29.000000</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>94.000000</td>
+<td>126.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>71.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>25%</td>
+<td>48.000000</td>
+<td>0.000000</td>
+<td>3.000000</td>
+<td>120.000000</td>
+<td>211.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>133.500000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>50%</td>
+<td>56.000000</td>
+<td>1.000000</td>
+<td>3.000000</td>
+<td>130.000000</td>
+<td>241.000000</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>153.000000</td>
+<td>0.000000</td>
+<td>0.800000</td>
+<td>2.000000</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>75%</td>
+<td>61.000000</td>
+<td>1.000000</td>
+<td>4.000000</td>
+<td>140.000000</td>
+<td>275.000000</td>
+<td>0.000000</td>
+<td>2.000000</td>
+<td>166.000000</td>
+<td>1.000000</td>
+<td>1.600000</td>
+<td>2.000000</td>
+<td>2.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>max</td>
+<td>77.000000</td>
+<td>1.000000</td>
+<td>4.000000</td>
+<td>200.000000</td>
+<td>564.000000</td>
+<td>1.000000</td>
+<td>2.000000</td>
+<td>202.000000</td>
+<td>1.000000</td>
+<td>6.200000</td>
+<td>3.000000</td>
+<td>4.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Next we look at number of unique values of each feature:</p>
+<div id="tbl-unique_stats" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-unique_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Number of unique values per features
+</figcaption>
+<div aria-describedby="tbl-unique_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div id="e3fad991" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>age</td>
+<td>41</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>sex</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>cp</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>trestbps</td>
+<td>50</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>chol</td>
+<td>152</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>fbs</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>restecg</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>thalach</td>
+<td>91</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>exang</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>oldpeak</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>slope</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>ca</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>thal</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>target</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>The plots below are distribution of various features color coded by the target value (Disease or No Disease):</p>
+<div id="fig-eda" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../eda/img/feature_distributions_grid.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eda-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Feature distribution grid plot
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="modeling-section" class="level1">
 <h1>Modeling Section</h1>
@@ -187,6 +615,91 @@ div.csl-indent {
 </section>
 <section id="fit-the-model" class="level2">
 <h2 class="anchored" data-anchor-id="fit-the-model">Fit the Model</h2>
+<div id="2118b26c" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+<th data-quarto-table-cell-role="th">4</th>
+<th data-quarto-table-cell-role="th">accuracy</th>
+<th data-quarto-table-cell-role="th">macro avg</th>
+<th data-quarto-table-cell-role="th">weighted avg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>precision</td>
+<td>0.769231</td>
+<td>0.500000</td>
+<td>0.285714</td>
+<td>0.166667</td>
+<td>0.0</td>
+<td>0.6</td>
+<td>0.344322</td>
+<td>0.554701</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>recall</td>
+<td>0.937500</td>
+<td>0.272727</td>
+<td>0.285714</td>
+<td>0.142857</td>
+<td>0.0</td>
+<td>0.6</td>
+<td>0.327760</td>
+<td>0.600000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>f1-score</td>
+<td>0.845070</td>
+<td>0.352941</td>
+<td>0.285714</td>
+<td>0.153846</td>
+<td>0.0</td>
+<td>0.6</td>
+<td>0.327514</td>
+<td>0.566692</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>support</td>
+<td>32.000000</td>
+<td>11.000000</td>
+<td>7.000000</td>
+<td>7.000000</td>
+<td>3.0</td>
+<td>0.6</td>
+<td>60.000000</td>
+<td>60.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="fig-coefs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coefs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/model_coefficients.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coefs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Coefficients of our model
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="predict-x_test-and-compatr-with-actuals-y_test" class="level2">
 <h2 class="anchored" data-anchor-id="predict-x_test-and-compatr-with-actuals-y_test">Predict (X_test) and compatr with Actuals (y_test)</h2>
@@ -195,7 +708,8 @@ div.csl-indent {
 <section id="discussion" class="level1">
 <h1>Discussion</h1>
 <p>The Decision Tree model was able to identify meaningful patterns to predict heart disease based on the data, with a test score of 0.61 and train score of 0.78. Based on these results, it might indicate that there was some overfitting based on the large difference between training and test results.</p>
-<p>From the EDA, we see that various features such as age, sex, chol and more have clear differences in their distribution between disease and no disease which will help the model to predict between the two. For a better predictor, we may want to incorporate additional features given the complexity of heart disease.</p>
+<p>From the EDA (<a href="#fig-eda" class="quarto-xref">Figure&nbsp;1</a>), we see that various features such as age, sex, chol and more have clear differences in their distribution between disease and no disease which will help the model to predict between the two. For a better predictor, we may want to incorporate additional features given the complexity of heart disease.</p>
+<p>Our final model contain the coefficient values as seen in <a href="#fig-coefs" class="quarto-xref">Figure&nbsp;2</a>.</p>
 </section>
 <section id="results-and-conclusion" class="level1">
 <h1>Results and Conclusion</h1>
