@@ -1,0 +1,15 @@
+,Column,Type,Non-Null Count,Null Count
+0,age,float64,303,0
+1,sex,float64,303,0
+2,cp,float64,303,0
+3,trestbps,float64,303,0
+4,chol,float64,303,0
+5,fbs,float64,303,0
+6,restecg,float64,303,0
+7,thalach,float64,303,0
+8,exang,float64,303,0
+9,oldpeak,float64,303,0
+10,slope,float64,303,0
+11,ca,object,303,0
+12,thal,object,303,0
+13,target,int64,303,0
