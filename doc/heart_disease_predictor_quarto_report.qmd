@@ -53,6 +53,17 @@ We use the Heart Disease dataset from the UCI Machine Learning Repository, a wid
 
 These variables include both continuous and categorical measurements commonly used in clinical diagnostics.
 
+The following table @tbl-info_stats shows the type of each measurement and the number of null and non-null counts in the dataset.
+
+:::{#tbl-info_stats tbl-cap="Data types of feature names"}
+```{python}
+import pandas as pd
+
+df = pd.read_csv("../eda/tables/info_stats.csv")
+df
+```
+:::
+
 # Methodology
 We build a machine-learning classification model using the UCI Heart Disease dataset:
 
@@ -97,6 +108,33 @@ Data validation include ALL the checks you wrote:
 
 # Exploratory Data Analysis (EDA)
 
+
+We start by calculating some statistics for all the features:
+
+:::{#tbl-describe_stats tbl-cap="Statistics of features"}
+```{python}
+import pandas as pd
+
+df = pd.read_csv("../eda/tables/describe_stats.csv")
+df
+```
+:::
+
+Next we look at number of unique values of each feature:
+
+:::{#tbl-unique_stats tbl-cap="Number of unique values per features"}
+```{python}
+import pandas as pd
+
+df = pd.read_csv("../eda/tables/unique_stats.csv")
+df
+```
+:::
+
+The plots below are distribution of various features color coded by the target value (Disease or No Disease):
+
+![Feature distribution grid plot](../eda/img/feature_distributions_grid.png){#fig-eda}
+
 # Modeling Section
 
 ## Column Transformations
@@ -107,16 +145,28 @@ Data validation include ALL the checks you wrote:
 
 ## Fit the Model
 
-## Predict (X_test) and compatr with Actuals (y_test)
+```{python}
+import pandas as pd
+
+df = pd.read_csv("../results/model_classification_report.csv")
+df
+```
+
+![Coefficients of our model](../results/model_coefficients.png){#fig-coefs}
+
+## Predict (X_test) and compare with Actuals (y_test)
 
 # Discussion
 
 The Decision Tree model was able to identify meaningful patterns to predict heart disease based on the data, with a test score of 0.61 and train score of 0.78. Based on these results, it might indicate that there was some overfitting based on the large difference between training and test results.
 
-From the EDA, we see that various features such as age, sex, chol and more have clear differences in their distribution between disease and no disease which will help the model to predict between the two. For a better predictor, we may want to incorporate additional features given the complexity of heart disease.
+From the EDA (@fig-eda), we see that various features such as age, sex, chol and more have clear differences in their distribution between disease and no disease which will help the model to predict between the two. For a better predictor, we may want to incorporate additional features given the complexity of heart disease.
+
+Our final model contain the coefficient values as seen in @fig-coefs.
 
 # Results and Conclusion
 
 Our analysis shows that several clinical features differ noticeably between patients with and without heart disease. As seen in the EDA histograms, patients with heart disease tend to have higher resting blood pressure (trestbps), higher ST-depression values (oldpeak), and lower maximum heart rate achieved (thalach) compared to individuals without disease. After preprocessing the dataset using scaling for numerical variables and one-hot encoding for categorical variables, we trained a Support Vector Classifier (SVC) model. Cross-validation results indicate an average test accuracy of 0.61, with a higher training accuracy of 0.78, suggesting some overfitting. When evaluating predictions on the unseen test set, the model correctly identified many cases but also showed several misclassifications, especially where the model predicted “0” (no disease) but the true label was “1” or “2.” Overall, while the model captures meaningful patterns in the dataset, its moderate predictive performance suggests that further tuning, alternative models, or feature engineering may be needed to improve accuracy and reduce classification bias.
+
 
 ## References
