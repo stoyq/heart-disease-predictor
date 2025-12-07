@@ -54,7 +54,7 @@ def main(dataset_url, dataset_filename, download_dir, output_dir, debug):
         print(df)
 
     # Write out processed data
-    output_path = output_dir + "/" + dataset_filename + "_clean.csv"
+    output_path = output_dir + "/cleveland_clean.csv"
     df.to_csv(output_path, index=False)
     print(f"{'Processed data saved to:':<30}" + output_path)
 
