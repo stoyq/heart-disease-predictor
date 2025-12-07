@@ -35,7 +35,7 @@ Navigate to the `heart-disease-predictor` folder.
 From here, you can either set up the environment locally on your computer (Method A), or use the Docker container that we provide (Method B).
 
 
-#### Method A: Set up local installation
+#### Method A: Set up local environment
 
 1. Create the environment from Makefile
 
@@ -48,14 +48,6 @@ From here, you can either set up the environment locally on your computer (Metho
     ```
     conda activate group25-env
     ```
-
-3. Run Jupyter Lab
-
-    ```
-    jupyter-lab
-    ```
-
-4. If Jupyter Lab asks to select a kernel, choose `group25-env`
 
 #### Method B: Use the Docker container
 
@@ -74,7 +66,7 @@ From here, you can either set up the environment locally on your computer (Metho
 
     <http://localhost:8899>
 
-3. Run the analysis (next section). When finished, go back to the terminal to stop the running container by:
+3. This will start Jupyter Lab. Click on Terminal icon and navigate to the root of the project directory (you will know you are at the root of the project if `ls` shows the same files as you see above. Once you are at the root of the project, you are ready to run the analysis (next section). When finished, go back to the terminal (where you typed `make up`) to stop the running container by:
 
     ```
     make stop
