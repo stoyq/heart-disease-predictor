@@ -67,10 +67,10 @@ def main():
     cm = confusion_matrix(y_test, y_pred)
 
     plt.imshow(cm, cmap="Blues")
-plt.colorbar()
-plt.title("SVC Confusion Matrix")
-plt.xlabel("Predicted")
-plt.ylabel("Actual")
+    plt.colorbar()
+    plt.title("SVC Confusion Matrix")
+    plt.xlabel("Predicted")
+    plt.ylabel("Actual")
 
 # Add cell labels manually
 for i in range(cm.shape[0]):
