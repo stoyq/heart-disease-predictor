@@ -1,4 +1,4 @@
-FROM condaforge/miniforge3:latest
+FROM condaforge/miniforge3:25.9.1-0
 
 COPY conda-lock.yml conda-lock.yml
 
