@@ -7,6 +7,15 @@ from deepchecks.tabular.checks import FeatureFeatureCorrelation
 from deepchecks.tabular import Dataset
 from sklearn.model_selection import train_test_split
 
+
+import sys 
+import os 
+
+sys.path.append(os.path.join(os.path.dirname(__file__),".."))
+
+from src.preapare_data_for_modeling_function import split_data
+
+
 def create_dir_if_not_exists(directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
@@ -72,13 +81,7 @@ def main(input_dir, out_dir):
     X = cleveland_data.drop(columns=["target"])
     y = cleveland_data["target"]
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X,
-        y,
-        test_size=0.20,   
-        random_state=522,   
-        stratify=y         
-    )
+    X_train, X_test, y_train, y_test = split_data(X,y)
     
     # Merge target back before saving
 
