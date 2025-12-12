@@ -72,11 +72,11 @@ def main():
     plt.xlabel("Predicted")
     plt.ylabel("Actual")
 
-# Add cell labels manually
-for i in range(cm.shape[0]):
-    for j in range(cm.shape[1]):
-        plt.text(j, i, cm[i, j], ha="center", va="center", color="black")
+    # Add cell labels manually
+    for i in range(cm.shape[0]):
+        for j in range(cm.shape[1]):
+            plt.text(j, i, cm[i, j], ha="center", va="center", color="black")
 
-plt.tight_layout()
-plt.savefig(f"{args.output}_confusion_matrix.png")
-plt.close()
+    plt.tight_layout()
+    plt.savefig(f"{args.output}_confusion_matrix.png")
+    plt.close()
