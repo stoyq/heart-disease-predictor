@@ -11,15 +11,15 @@ Milestone 4
 
 ### Added
 
-- List any new things added here
+- Example: Added such and such as suggested by Peer Review (#47)
 
 ### Changed
 
-- List any changes here
+- Example: Changed such and such as suggested by Peer Review (#47)
 
 ### Removed
 
-- List anything removed here
+- Example: Removed such and such as suggested by Peer Review (#47)
 
 ## [2.0.1] - 2025-12-07
 
