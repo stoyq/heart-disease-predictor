@@ -13,7 +13,7 @@ def describe_data(clean_data):
         raise ValueError("Dataframe must contain observations.")
     
     describe_stats = clean_data.describe()
-    nunique_stats = clean_data.nunique()
+    nunique_stats = pd.DataFrame(clean_data.nunique())
 
     info_data = []
     for col in clean_data.columns:
