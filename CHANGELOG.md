@@ -15,7 +15,7 @@ Milestone 4
 
 ### Changed
 
-- Improveed code to reduce repetition as suggested by Peer Review (#89)
+- Improved code to reduce repetition as suggested by Peer Review (#89)
 - Made fixes to inconsistant model name to focus on the SVC as suggested by Peer Review (#68)
 - Added confusion matrix as suggested in Peer Review (#32)
 
