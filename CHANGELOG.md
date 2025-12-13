@@ -11,12 +11,12 @@ Milestone 4
 
 ### Added
 
-- Improved modlarity by adding dedicated helper functions including to generate tables, download data and more as suggested by Peer Review (#89) 
+- Improved modularity by adding dedicated helper functions including to generate tables, download data and more as suggested by Peer Review (#89) 
 
 ### Changed
 
 - Improved code to reduce repetition as suggested by Peer Review (#89)
-- Made fixes to inconsistant model name to focus on the SVC as suggested by Peer Review (#68)
+- Made fixes to inconsistent model name to focus on the SVC as suggested by Peer Review (#68)
 - Added confusion matrix as suggested in Peer Review (#32)
 
 ### Removed
