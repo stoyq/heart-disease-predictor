@@ -21,7 +21,8 @@ def test_all_items_are_dataframes():
     result = describe_data(test_data)
     assert all(isinstance(item, pd.DataFrame) for item in result)
 
+def test_debug_output_types():
+    result = describe_data(test_data)
 
-
-
-
+    for i, item in enumerate(result):
+        print(i, type(item))
