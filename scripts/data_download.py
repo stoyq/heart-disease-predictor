@@ -36,12 +36,16 @@ def main(dataset_url, dataset_filename, download_dir, output_dir, debug):
     # Download the zip file into memory
     response = requests.get(url)
 
-    # Open the zip from memory
-    with zipfile.ZipFile(BytesIO(response.content)) as z:
-        # We only want the Cleveland data
-        z.extract(dataset_filename, download_dir)
+    try:
+        # Open the zip from memory
+        with zipfile.ZipFile(BytesIO(response.content)) as z:
+            # We only want the Cleveland data
+            z.extract(dataset_filename, download_dir)
+            downloaded_path = download_dir + "/" + dataset_filename
+    except zipfile.BadZipFile:
+        print("Warning: Download not successful. Temporarily loading from local folder.")
+        downloaded_path = download_dir + "/" + dataset_filename
 
-    downloaded_path = download_dir + "/" + dataset_filename
     print(f"{'Raw data saved to:':<30}" + downloaded_path)
 
     cols = [
