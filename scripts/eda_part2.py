@@ -4,6 +4,11 @@
 import os
 import click
 import pandas as pd
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from src.describe_data import describe_data
+
 
 @click.command()
 @click.option('--processed-training-data', type=str, help="Path to processed training data")
@@ -14,37 +19,23 @@ def main(processed_training_data, output_to):
 
     data_clean = pd.read_csv(processed_training_data)
     df = data_clean.copy()
-
-    # Generate descriptive statistics
-    stats1 = df.describe()
-    stats2 = df.nunique()
-
-    info_data = []
-    for col in df.columns:
-        info_data.append({
-            'Column': col,
-            'Type': str(df[col].dtype),
-            'Non-Null Count': df[col].notna().sum(),
-            'Null Count': df[col].isna().sum()
-        })
-    info_df = pd.DataFrame(info_data)
-    stats3 = info_df
+    stats = describe_data(df)
 
     # Save as CSV
     if output_to:
         os.makedirs(output_to, exist_ok=True)
         stats_path = os.path.join(output_to, "describe_stats.csv")
-        stats1.to_csv(stats_path)
+        stats[0].to_csv(stats_path)
         print(f"Saved: {stats_path}")
     if output_to:
         os.makedirs(output_to, exist_ok=True)
         stats_path = os.path.join(output_to, "unique_stats.csv")
-        stats2.to_csv(stats_path)
+        stats[1].to_csv(stats_path)
         print(f"Saved: {stats_path}")
     if output_to:
         os.makedirs(output_to, exist_ok=True)
         stats_path = os.path.join(output_to, "info_stats.csv")
-        stats3.to_csv(stats_path)
+        stats[2].to_csv(stats_path)
         print(f"Saved: {stats_path}")   
 
 
