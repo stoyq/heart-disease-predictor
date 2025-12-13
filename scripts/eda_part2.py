@@ -24,20 +24,17 @@ def main(processed_training_data, output_to):
     # Save as CSV
     if output_to:
         os.makedirs(output_to, exist_ok=True)
-        stats_path = os.path.join(output_to, "describe_stats.csv")
-        stats[0].to_csv(stats_path)
-        print(f"Saved: {stats_path}")
-    if output_to:
-        os.makedirs(output_to, exist_ok=True)
-        stats_path = os.path.join(output_to, "unique_stats.csv")
-        stats[1].to_csv(stats_path)
-        print(f"Saved: {stats_path}")
-    if output_to:
-        os.makedirs(output_to, exist_ok=True)
-        stats_path = os.path.join(output_to, "info_stats.csv")
-        stats[2].to_csv(stats_path)
-        print(f"Saved: {stats_path}")   
+        
+        filenames = [
+            "describe_stats.csv",
+            "unique_stats.csv",
+            "info_stats.csv"
+        ]
 
+        for stat, filename in zip(stats, filenames):
+            stats_path = os.path.join(output_to, filename)
+            stat.to_csv(stats_path)
+            print(f"Saved: {stats_path}")
 
 if __name__ == '__main__':
     main()
