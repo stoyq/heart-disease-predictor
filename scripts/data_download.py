@@ -1,9 +1,15 @@
 import click
 import os
+import sys
 import requests
 import zipfile
 import pandas as pd
 from io import BytesIO
+from pathlib import Path
+
+sys.path.append(os.path.join(os.path.dirname(__file__),".."))
+from src.download_utility import url_is_working
+from src.download_utility import file_exists
 
 #import warnings
 #warnings.filterwarnings("ignore")
@@ -33,6 +39,10 @@ def main(dataset_url, dataset_filename, download_dir, output_dir, debug):
     os.makedirs(download_dir, exist_ok=True)
     os.makedirs(output_dir, exist_ok=True)
 
+    # Check URL validity
+    if not url_is_working(url):
+        print('Invalid URL')
+
     # Download the zip file into memory
     response = requests.get(url)
 
@@ -61,6 +71,12 @@ def main(dataset_url, dataset_filename, download_dir, output_dir, debug):
     output_path = output_dir + "/cleveland_clean.csv"
     df.to_csv(output_path, index=False)
     print(f"{'Processed data saved to:':<30}" + output_path)
+
+    # Check output file exists
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    output_file_path = PROJECT_ROOT / "data" / "processed" / "cleveland_clean.csv"
+    if not file_exists(str(output_file_path)):
+        print(f"Failed to write to: {output_file_path}")
 
 
 if __name__ == '__main__':
