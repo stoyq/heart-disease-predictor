@@ -163,7 +163,8 @@ df = pd.read_csv("../results/model_classification_report.csv")
 df
 ```
 
-![Coefficients of our model](../results/model_coefficients.png){#fig-coefs}
+![SVC Confusion Matrix](../results/model_confusion_matrix.png){#fig-confusion width=70%}
+
 
 ## Predict (X_test) and compare with Actuals (y_test)
 
@@ -173,7 +174,7 @@ The SVC model was able to identify meaningful patterns to predict heart disease 
 
 From the EDA (@fig-eda), we see that various features such as age, sex, chol and more have clear differences in their distribution between disease and no disease which will help the model to predict between the two. For a better predictor, we may want to incorporate additional features given the complexity of heart disease.
 
-Our final model contain the coefficient values as seen in @fig-coefs.
+The confusion matrix (@fig-confusion) shows that the model captures meaningful patterns but sometimes misclassifies borderline cases. Additional feature engineering or alternative models may improve performance.
 
 # Results and Conclusion
 

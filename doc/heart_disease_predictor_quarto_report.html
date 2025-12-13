@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.21">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,18 +45,19 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="heart_disease_predictor_quarto_report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="heart_disease_predictor_quarto_report_files/libs/clipboard/clipboard.min.js"></script>
 <script src="heart_disease_predictor_quarto_report_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="heart_disease_predictor_quarto_report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="heart_disease_predictor_quarto_report_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="heart_disease_predictor_quarto_report_files/libs/quarto-html/popper.min.js"></script>
 <script src="heart_disease_predictor_quarto_report_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="heart_disease_predictor_quarto_report_files/libs/quarto-html/anchor.min.js"></script>
 <link href="heart_disease_predictor_quarto_report_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="heart_disease_predictor_quarto_report_files/libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="heart_disease_predictor_quarto_report_files/libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="heart_disease_predictor_quarto_report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="heart_disease_predictor_quarto_report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="heart_disease_predictor_quarto_report_files/libs/bootstrap/bootstrap-8a894fcc3cb5e37eb5bf30def131be2f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<link href="heart_disease_predictor_quarto_report_files/libs/bootstrap/bootstrap-a74871fe4945b66d259aafc266475145.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -92,7 +93,7 @@ div.csl-indent {
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../heart_disease_predictor_quarto_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="heart_disease_predictor_quarto_report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -165,12 +166,12 @@ div.csl-indent {
 Table&nbsp;1: Data types of feature names
 </figcaption>
 <div aria-describedby="tbl-info_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="fdf5f408" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div id="abb2d795" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -183,7 +184,7 @@ Table&nbsp;1: Data types of feature names
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>0</td>
 <td>age</td>
 <td>float64</td>
@@ -191,7 +192,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>1</td>
 <td>sex</td>
 <td>float64</td>
@@ -199,7 +200,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>2</td>
 <td>cp</td>
 <td>float64</td>
@@ -207,7 +208,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>3</td>
 <td>trestbps</td>
 <td>float64</td>
@@ -215,7 +216,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>4</td>
 <td>chol</td>
 <td>float64</td>
@@ -223,7 +224,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>5</td>
 <td>fbs</td>
 <td>float64</td>
@@ -231,7 +232,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>6</td>
 <td>restecg</td>
 <td>float64</td>
@@ -239,7 +240,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>7</td>
 <td>thalach</td>
 <td>float64</td>
@@ -247,7 +248,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
+<th data-quarto-table-cell-role="th">8</th>
 <td>8</td>
 <td>exang</td>
 <td>float64</td>
@@ -255,7 +256,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
+<th data-quarto-table-cell-role="th">9</th>
 <td>9</td>
 <td>oldpeak</td>
 <td>float64</td>
@@ -263,7 +264,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">10</td>
+<th data-quarto-table-cell-role="th">10</th>
 <td>10</td>
 <td>slope</td>
 <td>float64</td>
@@ -271,7 +272,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">11</td>
+<th data-quarto-table-cell-role="th">11</th>
 <td>11</td>
 <td>ca</td>
 <td>object</td>
@@ -279,7 +280,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">12</td>
+<th data-quarto-table-cell-role="th">12</th>
 <td>12</td>
 <td>thal</td>
 <td>object</td>
@@ -287,7 +288,7 @@ Table&nbsp;1: Data types of feature names
 <td>0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">13</td>
+<th data-quarto-table-cell-role="th">13</th>
 <td>13</td>
 <td>target</td>
 <td>int64</td>
@@ -329,12 +330,12 @@ Table&nbsp;1: Data types of feature names
 Table&nbsp;2: Statistics of features
 </figcaption>
 <div aria-describedby="tbl-describe_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="2af9eb76" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div id="0fe90f9b" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -355,7 +356,7 @@ Table&nbsp;2: Statistics of features
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>count</td>
 <td>303.000000</td>
 <td>303.000000</td>
@@ -371,7 +372,7 @@ Table&nbsp;2: Statistics of features
 <td>303.000000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>mean</td>
 <td>54.438944</td>
 <td>0.679868</td>
@@ -387,7 +388,7 @@ Table&nbsp;2: Statistics of features
 <td>0.937294</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>std</td>
 <td>9.038662</td>
 <td>0.467299</td>
@@ -403,7 +404,7 @@ Table&nbsp;2: Statistics of features
 <td>1.228536</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>min</td>
 <td>29.000000</td>
 <td>0.000000</td>
@@ -419,7 +420,7 @@ Table&nbsp;2: Statistics of features
 <td>0.000000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>25%</td>
 <td>48.000000</td>
 <td>0.000000</td>
@@ -435,7 +436,7 @@ Table&nbsp;2: Statistics of features
 <td>0.000000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>50%</td>
 <td>56.000000</td>
 <td>1.000000</td>
@@ -451,7 +452,7 @@ Table&nbsp;2: Statistics of features
 <td>0.000000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>75%</td>
 <td>61.000000</td>
 <td>1.000000</td>
@@ -467,7 +468,7 @@ Table&nbsp;2: Statistics of features
 <td>2.000000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>max</td>
 <td>77.000000</td>
 <td>1.000000</td>
@@ -498,12 +499,12 @@ Table&nbsp;2: Statistics of features
 Table&nbsp;3: Number of unique values per features
 </figcaption>
 <div aria-describedby="tbl-unique_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="7cbb4ecb" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div id="7a5a0df8" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -513,72 +514,72 @@ Table&nbsp;3: Number of unique values per features
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>age</td>
 <td>41</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>sex</td>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>cp</td>
 <td>4</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>trestbps</td>
 <td>50</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>chol</td>
 <td>152</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>fbs</td>
 <td>2</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>restecg</td>
 <td>3</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>thalach</td>
 <td>91</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
+<th data-quarto-table-cell-role="th">8</th>
 <td>exang</td>
 <td>2</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
+<th data-quarto-table-cell-role="th">9</th>
 <td>oldpeak</td>
 <td>40</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">10</td>
+<th data-quarto-table-cell-role="th">10</th>
 <td>slope</td>
 <td>3</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">11</td>
+<th data-quarto-table-cell-role="th">11</th>
 <td>ca</td>
 <td>5</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">12</td>
+<th data-quarto-table-cell-role="th">12</th>
 <td>thal</td>
 <td>4</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">13</td>
+<th data-quarto-table-cell-role="th">13</th>
 <td>target</td>
 <td>5</td>
 </tr>
@@ -620,12 +621,12 @@ Figure&nbsp;1: Feature distribution grid plot
 <section id="fit-the-model" class="level2">
 <h2 class="anchored" data-anchor-id="fit-the-model">Fit the Model</h2>
 <p>After cross-validation, the final SVC pipeline was fit on the full training set. The fitted pipeline was then used to generate predictions on the held-out test set, enabling an out-of-sample evaluation of classification performance.</p>
-<div id="d82ea5dd" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div id="ac2e4a70" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -642,43 +643,43 @@ Figure&nbsp;1: Feature distribution grid plot
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>precision</td>
 <td>0.769231</td>
-<td>0.500000</td>
+<td>0.600000</td>
+<td>0.200000</td>
 <td>0.285714</td>
-<td>0.166667</td>
 <td>0.0</td>
 <td>0.6</td>
-<td>0.344322</td>
-<td>0.554701</td>
+<td>0.370989</td>
+<td>0.576923</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>recall</td>
 <td>0.937500</td>
 <td>0.272727</td>
-<td>0.285714</td>
 <td>0.142857</td>
+<td>0.285714</td>
 <td>0.0</td>
 <td>0.6</td>
 <td>0.327760</td>
 <td>0.600000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>f1-score</td>
 <td>0.845070</td>
-<td>0.352941</td>
+<td>0.375000</td>
+<td>0.166667</td>
 <td>0.285714</td>
-<td>0.153846</td>
 <td>0.0</td>
 <td>0.6</td>
-<td>0.327514</td>
-<td>0.566692</td>
+<td>0.334490</td>
+<td>0.572232</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>support</td>
 <td>32.000000</td>
 <td>11.000000</td>
@@ -695,13 +696,13 @@ Figure&nbsp;1: Feature distribution grid plot
 </div>
 </div>
 </div>
-<div id="fig-coefs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-confusion" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-coefs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../results/model_coefficients.png" class="img-fluid figure-img">
+<div aria-describedby="fig-confusion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/model_confusion_matrix.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coefs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Coefficients of our model
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-confusion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: SVC Confusion Matrix
 </figcaption>
 </figure>
 </div>
@@ -714,7 +715,7 @@ Figure&nbsp;2: Coefficients of our model
 <h1>Discussion</h1>
 <p>The SVC model was able to identify meaningful patterns to predict heart disease based on the data, with a test score of 0.61 and train score of 0.78. Based on these results, it might indicate that there was some overfitting based on the large difference between training and test results.</p>
 <p>From the EDA (<a href="#fig-eda" class="quarto-xref">Figure&nbsp;1</a>), we see that various features such as age, sex, chol and more have clear differences in their distribution between disease and no disease which will help the model to predict between the two. For a better predictor, we may want to incorporate additional features given the complexity of heart disease.</p>
-<p>Our final model contain the coefficient values as seen in <a href="#fig-coefs" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<p>The confusion matrix (<a href="#fig-confusion" class="quarto-xref">Figure&nbsp;2</a>) shows that the model captures meaningful patterns but sometimes misclassifies borderline cases. Additional feature engineering or alternative models may improve performance.</p>
 </section>
 <section id="results-and-conclusion" class="level1">
 <h1>Results and Conclusion</h1>
