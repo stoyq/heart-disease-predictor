@@ -67,28 +67,31 @@ df
 # Methodology
 We build a machine-learning classification model using the UCI Heart Disease dataset:
 
-Load data from the original source on the web: https://archive.ics.uci.edu/dataset/45/heart+disease
+## Wrangle and clean the data
 
-Wrangle and clean the data
+- Load data
+- Replace missing values
+- Assign meaningful column names
+- Convert categorical variables to numeric where needed
+- Ensure that the target variable is binary (0 = no heart disease, 1 = heart disease)
 
-Replace missing values
-Assign meaningful column names
-Convert categorical variables to numeric where needed
-Ensure that the target variable is binary (0 = no heart disease, 1 = heart disease)
-Perform exploratory data analysis (EDA)
-Summary statistics for continuous variables
-Count plots for categorical variables
-Histograms and boxplots to understand feature distributions
-Create visualizations relevant to the classification task
-Pairplots to explore relationships between key features
-Distribution of target classes
-Feature correlation matrix
-Build a classification model
-A SVC model is trained to predict heart disease.
-We split the dataset into training and testing subsets and evaluate model accuracy.
-Visualize the model results
-Plot of the trained SVC model
-Feature importance bar chart
+## Perform exploratory data analysis (EDA)
+- Summary statistics for continuous variables
+- Count plots for categorical variables
+- Histograms and boxplots to understand feature distributions
+- Create visualizations relevant to the classification task
+- Pairplots to explore relationships between key features
+- Distribution of target classes
+- Feature correlation matrix
+
+## Build a classification model
+
+- A SVC model is trained to predict heart disease.
+- We split the dataset into training and testing subsets and evaluate model accuracy.
+
+## Visualize the model results
+- Plot of the trained SVC model
+- Feature importance bar chart
 
 # Importing the Dataset
 
@@ -98,7 +101,8 @@ In our actual analysis, we fetch the same data directly using UCI's own ucimlrep
 
 # Data Validation
 
-Data validation include ALL the checks you wrote:
+Data validation include all the following:
+
 - Data Type Check
 - Missing Values Check
 - Duplicate Check
