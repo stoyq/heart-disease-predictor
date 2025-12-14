@@ -17,7 +17,7 @@ dependencies:
   - quarto=1.5.57
   - click=8.1.7
   - ipython<9
-  - pytest
+  - pytest=9.0
   - pip:
       - "deepchecks[tabular]==0.18.1"
       - pointblank==0.16.0
