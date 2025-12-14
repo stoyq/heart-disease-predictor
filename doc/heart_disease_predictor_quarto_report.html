@@ -73,7 +73,13 @@ div.csl-indent {
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">Dataset Description</a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#wrangle-and-clean-the-data" id="toc-wrangle-and-clean-the-data" class="nav-link" data-scroll-target="#wrangle-and-clean-the-data">Wrangle and clean the data</a></li>
+  <li><a href="#perform-exploratory-data-analysis-eda" id="toc-perform-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#perform-exploratory-data-analysis-eda">Perform exploratory data analysis (EDA)</a></li>
+  <li><a href="#build-a-classification-model" id="toc-build-a-classification-model" class="nav-link" data-scroll-target="#build-a-classification-model">Build a classification model</a></li>
+  <li><a href="#visualize-the-model-results" id="toc-visualize-the-model-results" class="nav-link" data-scroll-target="#visualize-the-model-results">Visualize the model results</a></li>
+  </ul></li>
   <li><a href="#importing-the-dataset" id="toc-importing-the-dataset" class="nav-link" data-scroll-target="#importing-the-dataset">Importing the Dataset</a></li>
   <li><a href="#data-validation" id="toc-data-validation" class="nav-link" data-scroll-target="#data-validation">Data Validation</a></li>
   <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</a></li>
@@ -164,8 +170,8 @@ div.csl-indent {
 Table&nbsp;1: Data types of feature names
 </figcaption>
 <div aria-describedby="tbl-info_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="85dbf8ec" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div id="2c63aad3" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -306,9 +312,42 @@ Table&nbsp;1: Data types of feature names
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
 <p>We build a machine-learning classification model using the UCI Heart Disease dataset:</p>
-<p>Load data from the original source on the web: https://archive.ics.uci.edu/dataset/45/heart+disease</p>
-<p>Wrangle and clean the data</p>
-<p>Replace missing values Assign meaningful column names Convert categorical variables to numeric where needed Ensure that the target variable is binary (0 = no heart disease, 1 = heart disease) Perform exploratory data analysis (EDA) Summary statistics for continuous variables Count plots for categorical variables Histograms and boxplots to understand feature distributions Create visualizations relevant to the classification task Pairplots to explore relationships between key features Distribution of target classes Feature correlation matrix Build a classification model A SVC model is trained to predict heart disease. We split the dataset into training and testing subsets and evaluate model accuracy. Visualize the model results Plot of the trained SVC model Feature importance bar chart</p>
+<section id="wrangle-and-clean-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="wrangle-and-clean-the-data">Wrangle and clean the data</h2>
+<ul>
+<li>Load data</li>
+<li>Replace missing values</li>
+<li>Assign meaningful column names</li>
+<li>Convert categorical variables to numeric where needed</li>
+<li>Ensure that the target variable is binary (0 = no heart disease, 1 = heart disease)</li>
+</ul>
+</section>
+<section id="perform-exploratory-data-analysis-eda" class="level2">
+<h2 class="anchored" data-anchor-id="perform-exploratory-data-analysis-eda">Perform exploratory data analysis (EDA)</h2>
+<ul>
+<li>Summary statistics for continuous variables</li>
+<li>Count plots for categorical variables</li>
+<li>Histograms and boxplots to understand feature distributions</li>
+<li>Create visualizations relevant to the classification task</li>
+<li>Pairplots to explore relationships between key features</li>
+<li>Distribution of target classes</li>
+<li>Feature correlation matrix</li>
+</ul>
+</section>
+<section id="build-a-classification-model" class="level2">
+<h2 class="anchored" data-anchor-id="build-a-classification-model">Build a classification model</h2>
+<ul>
+<li>A SVC model is trained to predict heart disease.</li>
+<li>We split the dataset into training and testing subsets and evaluate model accuracy.</li>
+</ul>
+</section>
+<section id="visualize-the-model-results" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-the-model-results">Visualize the model results</h2>
+<ul>
+<li>Plot of the trained SVC model</li>
+<li>Feature importance bar chart</li>
+</ul>
+</section>
 </section>
 <section id="importing-the-dataset" class="level1">
 <h1>Importing the Dataset</h1>
@@ -317,7 +356,15 @@ Table&nbsp;1: Data types of feature names
 </section>
 <section id="data-validation" class="level1">
 <h1>Data Validation</h1>
-<p>Data validation include ALL the checks you wrote: - Data Type Check - Missing Values Check - Duplicate Check - Category Level Check - Logical Ranges Check - Train/Test Leakage Check</p>
+<p>Data validation include all the following:</p>
+<ul>
+<li>Data Type Check</li>
+<li>Missing Values Check</li>
+<li>Duplicate Check</li>
+<li>Category Level Check</li>
+<li>Logical Ranges Check</li>
+<li>Train/Test Leakage Check</li>
+</ul>
 </section>
 <section id="exploratory-data-analysis-eda" class="level1">
 <h1>Exploratory Data Analysis (EDA)</h1>
@@ -328,8 +375,8 @@ Table&nbsp;1: Data types of feature names
 Table&nbsp;2: Statistics of features
 </figcaption>
 <div aria-describedby="tbl-describe_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="217bb84e" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div id="689422e7" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -497,8 +544,8 @@ Table&nbsp;2: Statistics of features
 Table&nbsp;3: Number of unique values per features
 </figcaption>
 <div aria-describedby="tbl-unique_stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="386cbfe0" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div id="84e1e2fe" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -619,8 +666,8 @@ Figure&nbsp;1: Feature distribution grid plot
 <section id="fit-the-model" class="level2">
 <h2 class="anchored" data-anchor-id="fit-the-model">Fit the Model</h2>
 <p>After cross-validation, the final SVC pipeline was fit on the full training set. The fitted pipeline was then used to generate predictions on the held-out test set, enabling an out-of-sample evaluation of classification performance.</p>
-<div id="36f1fe1f" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div id="0da3b244" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
