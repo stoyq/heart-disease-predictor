@@ -11,12 +11,14 @@ Milestone 3
 ### Added
 
 -   Improved modularity by adding dedicated helper functions including to generate tables, download data and more as suggested by Peer Review (#89)
+-   Add pytest version 9.0 for testing code
 
 ### Changed
 
 -   Improved code to reduce repetition as suggested by Peer Review (#89)
 -   Made fixes to inconsistent model name to focus on the SVC as suggested by Peer Review (#68)
 -   Added confusion matrix as suggested in Peer Review (#32)
+-   Updated the final report document
 
 ### Removed
 
@@ -28,7 +30,7 @@ Milestone 2 update
 
 ### Added
 
--   
+-   Makefile commands to run analysis and render report
 
 ### Fixed
 
