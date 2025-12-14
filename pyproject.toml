@@ -1,3 +1,16 @@
+# ------------------------------------------------------------
+# This file is included ONLY to fix pytest import paths.
+# It tells pytest to treat the "src/" folder as a Python module
+# so that tests can successfully import our modeling functions:
+#
+#   from src.SVC_Modeling_functions import ...
+#
+# Without this file, pytest raises:
+#   ModuleNotFoundError: No module named 'src'
+#
+# This does NOT affect the analysis scripts, Quarto report, or Makefile.
+# ------------------------------------------------------------
+
 [tool.pytest.ini_options]
 pythonpath = [
     ".",
