@@ -2,8 +2,7 @@
 up: ## stop and start docker-compose services
 	# stop existing containers
 	make stop
-	# try to pull from Docker Hub; if that fails, build locally
-	docker compose pull || docker build -t josedmyt/heart-disease-predictor:latest .
+
 	# then start services
 	docker compose up -d
 
