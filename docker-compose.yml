@@ -3,7 +3,7 @@ services:
     #build:
     #  context: .
     #  dockerfile: Dockerfile
-    image: josedmyt/heart-disease-predictor:latest
+    image: josedmyt/heart-disease-predictor@sha256:a9b480eed55b7c0f852daac34eecfcc5c6d97dca76e335886252eb42470f2147
     container_name: heart-disease-predictor
     ports:
       - "8899:8888"
